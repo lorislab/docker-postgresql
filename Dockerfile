@@ -1,6 +1,6 @@
 FROM maven:3.6.0-jdk-11 as build
 
-COPY build /build
+COPY . /build
 
 RUN cd build && mvn clean package
 
