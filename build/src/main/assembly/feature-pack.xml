@@ -1,0 +1,27 @@
+<assembly  xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+    <id>feature-pack</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <fileSets>
+        <fileSet>
+            <directory>src/main/resources</directory>
+            <outputDirectory>/</outputDirectory>
+            <lineEnding>unix</lineEnding>
+            <fileMode>0755</fileMode>
+            <filtered>true</filtered>
+        </fileSet>
+    </fileSets>
+    <dependencySets>
+        <dependencySet>
+            <includes>
+                <include>org.postgresql:postgresql</include>
+            </includes>
+            <outputDirectory>/packages/org.postgresql/content/modules/system/layers/base/org/postgresql/main/</outputDirectory>
+            <fileMode>0644</fileMode>
+        </dependencySet>
+    </dependencySets>
+
+</assembly>

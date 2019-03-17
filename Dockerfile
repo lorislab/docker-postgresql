@@ -1,5 +1,11 @@
+FROM maven:3.6.0-jdk-11 as build
+
+COPY build /build
+
+RUN cd build && mvn clean package
+
 FROM scratch
 
-ENV DRIVER_VERSION 42.2.5
+COPY --from=build /build/target/release /opt/postgresql
 
-ADD http://central.maven.org/maven2/org/postgresql/postgresql/${DRIVER_VERSION}/postgresql-${DRIVER_VERSION}.jar /opt/postgresql/
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+
+<config xmlns="urn:jboss:galleon:config:1.0" model="standalone" name="standalone.xml">
+    <feature spec="subsystem.datasources">
+        <feature spec="subsystem.datasources.jdbc-driver">
+            <param name="driver-name" value="postgresql"/>
+            <param name="jdbc-driver" value="postgresql"/>
+            <param name="driver-class-name" value="org.postgresql.Driver"/>
+            <param name="driver-module-name" value="org.postgresql"/>
+        </feature>
+    </feature>
+</config>
